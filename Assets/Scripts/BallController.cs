@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BallController : MonoBehaviour
 {
@@ -10,15 +11,46 @@ public class BallController : MonoBehaviour
     public KeyCode rightButton = KeyCode.D;
     public KeyCode leftButton = KeyCode.A;
 	public float speed = 10.0f;
-    public float yBoundary = 5f;
-    public float xBoundary = 5f;
+    public float yBoundary = 10.0f;
+    public float xBoundary = 10.0f;
 
     void Start()
     {
         rigidBody2D = GetComponent<Rigidbody2D>();
+        Problem23();
     }
 
-    void Update()
+    void FixedUpdate()
+    {
+        string scname = SceneManager.GetActiveScene().name;
+
+        if (scname == "Problem 1")
+        {
+            Problem1();
+        }
+
+        else if (scname == "Problem 4")
+        {
+            Problem4();
+        }
+
+        else if(scname == "Problem 5")
+        {
+            Problem5();
+        }
+    }
+
+    private void Problem1()
+    {
+
+    }
+
+    private void Problem23()
+    {
+        rigidBody2D.AddForce(new Vector2(75, 75));
+    }
+
+    private void Problem4()
     {
         Vector2 velocity = rigidBody2D.velocity;
 
@@ -32,12 +64,12 @@ public class BallController : MonoBehaviour
 			velocity.y = -speed;
 		}
 
-		else 
-		{
-			velocity.y= 0f;
-		}
+        else
+        {
+            velocity.y = 0;
+        }
 
-        if(Input.GetKey(leftButton))
+		if(Input.GetKey(leftButton))
         {
             velocity.x = -speed;
         }
@@ -49,9 +81,8 @@ public class BallController : MonoBehaviour
 
         else
         {
-            velocity.x = 0f;
+            velocity.x = 0;
         }
-
 
         rigidBody2D.velocity = velocity;
 
@@ -78,5 +109,11 @@ public class BallController : MonoBehaviour
         }
 
 		transform.position = position;
+    }
+
+    private void Problem5()
+    {
+        Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        transform.position = new Vector2(cursorPos.x, cursorPos.y);
     }
 }

@@ -498,7 +498,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upButton: 119
   downButton: 115
+  rightButton: 100
+  leftButton: 97
   speed: 10
+  yBoundary: 10
+  xBoundary: 10
 --- !u!1 &1595633931
 GameObject:
   m_ObjectHideFlags: 0
