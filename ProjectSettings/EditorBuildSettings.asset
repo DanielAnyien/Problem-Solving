@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
-    path: Assets/Scenes/Problem 1.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/362bae071254daf4c850f56e9b919bbd
     guid: 362bae071254daf4c850f56e9b919bbd
+  - enabled: 1
+    path: Assets/Scenes/Problem 4.unity
+    guid: a471038de43d3414ca056a3db614cebd
   m_configObjects: {}
