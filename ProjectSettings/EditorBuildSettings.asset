@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/__DELETED_GUID_Trash/362bae071254daf4c850f56e9b919bbd
     guid: 362bae071254daf4c850f56e9b919bbd
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Problem 1.unity
     guid: dd851735d4eb18740a2cef31b0e51d3b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Problem 2.unity
     guid: babf4decc0308584d91e61d418981639
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Problem 3.unity
     guid: 0e30b0777a49f1946a7a4fb437e859bf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Problem 4.unity
     guid: a471038de43d3414ca056a3db614cebd
   - enabled: 1
