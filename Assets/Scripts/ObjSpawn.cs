@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ObjSpawn : MonoBehaviour
 {
@@ -51,7 +52,16 @@ public class ObjSpawn : MonoBehaviour
 
     public void Respawn(GameObject box)
     {
-        squareQue.Enqueue(box);
-        respawnQue.Enqueue(currentTime + 3f);
+        string scname = SceneManager.GetActiveScene().name;
+        if (scname == "Problem 9")
+        {
+            squareQue.Enqueue(box);
+            respawnQue.Enqueue(currentTime);
+        }
+        else
+        {
+            squareQue.Enqueue(box);
+            respawnQue.Enqueue(currentTime + 3f);
+        }
     }
 }

@@ -26,23 +26,18 @@ public class BallController : MonoBehaviour
 
         if (scname == "Problem 1")
         {
-            Problem1();
+            
         }
 
-        else if (scname == "Problem 4")
+        else if (scname == "Problem 4" || scname == "Problem 9")
         {
-            Problem4();
+            MoveWithKeyBoard();
         }
 
         else if(scname == "Problem 5" || scname == "Problem 7" || scname == "Problem 8")
         {
-            Problem5();
+            MoveWithCursor();
         }
-    }
-
-    private void Problem1()
-    {
-
     }
 
     private void Problem23()
@@ -50,7 +45,7 @@ public class BallController : MonoBehaviour
         rigidBody2D.AddForce(new Vector2(75, 75));
     }
 
-    private void Problem4()
+    private void MoveWithKeyBoard()
     {
         Vector2 velocity = rigidBody2D.velocity;
 
@@ -111,7 +106,7 @@ public class BallController : MonoBehaviour
 		transform.position = position;
     }
 
-    private void Problem5()
+    private void MoveWithCursor()
     {
         Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         transform.position = new Vector2(cursorPos.x, cursorPos.y);

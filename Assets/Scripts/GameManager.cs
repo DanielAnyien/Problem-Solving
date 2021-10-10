@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Text scoreText;
     [SerializeField] ObjSpawn spawner;
 
+    [Header("UI")]
+    public UIGameOver GameOverUI;
+    public bool IsGameOver { get { return isGameOver; } }
+
+    private bool isGameOver = false;
+
     void Start ()
     {
         scoreText.text = "Score : " + score;
@@ -35,5 +41,11 @@ public class GameManager : MonoBehaviour
         score += addScore;
         scoreText.text = "Score : " + score;
         spawner.Respawn(square);
+    }
+
+    public void GameOver()
+    {
+        isGameOver = true;
+        GameOverUI.Show();
     }
 }
