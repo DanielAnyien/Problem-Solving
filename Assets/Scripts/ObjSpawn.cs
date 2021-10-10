@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObjSpawn : MonoBehaviour
 {
     public GameObject square;
+
     Vector2 whereToSpawn;
 
     float x, y;

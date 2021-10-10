@@ -34,7 +34,7 @@ public class BallController : MonoBehaviour
             Problem4();
         }
 
-        else if(scname == "Problem 5")
+        else if(scname == "Problem 5" || scname == "Problem 7")
         {
             Problem5();
         }
