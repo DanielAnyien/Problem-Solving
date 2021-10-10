@@ -119,6 +119,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5624cc39b753f4e4facb68b9c25c94a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxcol: {fileID: 7324230232893615248}
-  square: {fileID: 7324230232893615262}
-  value: 1
+  scorevalue: 1
+  _isrespawn: 1

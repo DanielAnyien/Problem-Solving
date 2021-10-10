@@ -5,23 +5,53 @@ using UnityEngine;
 public class ObjSpawn : MonoBehaviour
 {
     public GameObject square;
+    public int totalSpawn;
 
-    Vector2 whereToSpawn;
+    Queue<GameObject> squareQue = new Queue<GameObject>();
+    Queue<float> respawnQue = new Queue<float>();
 
-    float x, y;
+    [SerializeField] private LayerMask unspawnable;
+
+    float currentTime;
 
     void Start()
     {
-        int jml = Random.Range (1, 7);
-        
-        for (int i = 0; i <= jml; i++)
+        for (int i = 0; i < totalSpawn; i++)
         {
-            x = Random.Range(-7.5f, 7.5f);
-            y = Random.Range(-4.5f, 4.5f);
-
-            whereToSpawn = new Vector2 (x, y);
-
-            Instantiate (square, whereToSpawn, Quaternion.identity);
+            GameObject box = Instantiate(square);
+            box.transform.position = SpawnPos();
         }
+    }
+
+    private void Update()
+    {
+        currentTime += Time.deltaTime;
+
+        if (respawnQue.Count > 0 && currentTime >= respawnQue.Peek())
+        {
+            respawnQue.Dequeue();
+
+            GameObject respawnObj = squareQue.Dequeue();
+            respawnObj.transform.position = SpawnPos();
+            respawnObj.gameObject.SetActive(true);
+        }
+    }
+
+    protected virtual Vector2 SpawnPos()
+    {
+        Vector2 spawnPoint = new Vector2();
+        spawnPoint.x = Random.Range(-7.5f, 7.5f);
+        spawnPoint.y = Random.Range(-4.5f, 4.5f);
+
+        if(Physics2D.OverlapBox(spawnPoint, Vector2.one, unspawnable))
+            return SpawnPos();
+
+        return spawnPoint;
+    }
+
+    public void Respawn(GameObject box)
+    {
+        squareQue.Enqueue(box);
+        respawnQue.Enqueue(currentTime + 3f);
     }
 }

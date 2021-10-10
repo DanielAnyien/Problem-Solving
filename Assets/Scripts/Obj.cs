@@ -1,20 +1,21 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class Obj : MonoBehaviour
 {
-    public BoxCollider2D boxcol;
-    public GameObject square;
-
     public int scorevalue = 1;
+    [SerializeField] private bool _isrespawn;
 
-    void Start()
+    protected virtual void OnTriggerEnter2D(Collider2D col)
     {
-        boxcol = GetComponent<BoxCollider2D>();
-    }
-
-    void OnTriggerEnter2D(Collider2D col)
-    {
-        Destroy(square);
-        ScoreManager.score += scorevalue;
+        if (col.gameObject.CompareTag("Ball"))
+        {
+            if (!_isrespawn)
+                GameManager.Instance.AddScore(scorevalue);
+            else
+                GameManager.Instance.AddScore(scorevalue, this.gameObject);
+            
+            gameObject.SetActive(false);
+        }
     }
 }
