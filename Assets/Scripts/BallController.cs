@@ -24,12 +24,7 @@ public class BallController : MonoBehaviour
     {
         string scname = SceneManager.GetActiveScene().name;
 
-        if (scname == "Problem 1")
-        {
-            
-        }
-
-        else if (scname == "Problem 4" || scname == "Problem 9")
+        if (scname == "Problem 4" || scname == "Problem 9")
         {
             MoveWithKeyBoard();
         }

@@ -5,12 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: Assets/__DELETED_GUID_Trash/362bae071254daf4c850f56e9b919bbd
-    guid: 362bae071254daf4c850f56e9b919bbd
+  - enabled: 1
+    path: Assets/Scenes/Problem 10.unity
+    guid: 599072da331822f49bf992e1b14e02e4
   - enabled: 1
     path: Assets/Scenes/Problem 1.unity
     guid: dd851735d4eb18740a2cef31b0e51d3b
@@ -26,4 +23,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Problem 5.unity
     guid: 6be9452fa234c6b47a12720819a2d8ea
+  - enabled: 1
+    path: Assets/Scenes/Problem 6.unity
+    guid: 7619d5a8356b483409931d712fb78629
+  - enabled: 1
+    path: Assets/Scenes/Problem 7.unity
+    guid: b9481007688b2ab48b54c8ef25712803
+  - enabled: 1
+    path: Assets/Scenes/Problem 8.unity
+    guid: a9ce2a4c97578e44ebcbbfba2d307078
+  - enabled: 1
+    path: Assets/Scenes/Problem 9.unity
+    guid: 3437a9f4f380e064b9f5b46fd1e8aff6
   m_configObjects: {}
